@@ -37,3 +37,18 @@ openapi_generator(
     spec = "petstore.yaml",
 )
 ```
+
+## Release instructions
+
+Pick an appropriate version respecting semvar conventions.  Let's say we pick `v0.2.0`:
+
+```sh
+bash release/create_release_archive.sh v0.2.0 
+ls openapi-generator-bazel-v0.2.0.tar.gz
+```
+
+Then:
+1. Cut a release in the [Web gui](https://github.com/OpenAPITools/openapi-generator-bazel/releases/new)
+1. Set a new tag.  This tag should also start with a 'v'.
+1. The release name is also the version.  Historically it hasn't included a 'v' prefix, but it doesn't matter if it does.
+1. Upload the above `*.tar.gz` file to the release.
